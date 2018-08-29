@@ -298,6 +298,16 @@ In this concern we can create Methods for each social media to fetch and store a
 ```
   config.omniauth :gplus , gplus_app_id ,gplus_secret_key , :display => "popup" , scope: 'userinfo.email, userinfo.profile'
 ```
+### Note: the xx_app_id and xx_secrete_key whould be assigned from the ENV
+
+```
+  linkedin_app_id = ENV['linkedin_app_id']
+  linkedin_secret_key = ENV['linkedin_secret_key']
+```
+OR
+```
+  config.omniauth :facebook, ENV['facebook_app_id'] , ENV['facebook_secret_key'] , :display => "popup" , :scope => 'email,publish_actions', info_fields: 'email,name'
+```
 
 ### Note: display: "popup" attribute is used when we want social media signup to open in a separate browser window
 
@@ -312,13 +322,4 @@ In this concern we can create Methods for each social media to fetch and store a
   gem 'omniauth-linkedin'
 ```
 Run the bundle command, restart the server and Vola! 
-
-
-
-
-
-
-
-
-
 
